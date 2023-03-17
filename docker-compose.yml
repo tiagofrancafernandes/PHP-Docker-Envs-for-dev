@@ -21,9 +21,9 @@ services:
         ports:
             - '${FORWARD_DB_PORT:-5432}:5432'
         environment:
-            PGPASSWORD: '${DB_PASSWORD:-secret}'
+            PGPASSWORD: '${DB_PASSWORD:-pg}'
             POSTGRES_DB: '${DB_DATABASE:-pg}'
-            POSTGRES_USER: '${DB_USERNAME-:pg}'
+            POSTGRES_USER: '${DB_USERNAME:-pg}'
             POSTGRES_PASSWORD: '${DB_PASSWORD:-pg}'
         volumes:
             - './local-data/postgres-data:/var/lib/postgresql/data:rw'
@@ -36,7 +36,7 @@ services:
                 - pg_isready
                 - '-q'
                 - '-d'
-                - '${DB_DATABASE-:pg}'
+                - '${DB_DATABASE:-pg}'
                 - '-U'
                 - '${DB_USERNAME:-pg}'
             retries: 3
