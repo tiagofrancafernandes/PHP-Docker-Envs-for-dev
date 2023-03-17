@@ -1,0 +1,7 @@
+*.log
+*.out
+*ignore-*
+*-ignore*
+database
+db
+data

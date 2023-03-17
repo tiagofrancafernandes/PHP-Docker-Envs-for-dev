@@ -1,0 +1,7 @@
+*
+!.gitignore
+!docker*
+!Dockerfile*
+*.bkp
+*.copy
+*.log
